@@ -21,6 +21,7 @@
 		2BDBA95D1908BBE300C16FBF /* CollectionViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBA95C1908BBE300C16FBF /* CollectionViewDemoTests.m */; };
 		2BDBA9711908DB3600C16FBF /* MainCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBA9701908DB3600C16FBF /* MainCollectionViewController.m */; };
 		2BDBA97A1908F00C00C16FBF /* CollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBA9791908F00C00C16FBF /* CollectionViewFlowLayout.m */; };
+		2BDBA986190B93E000C16FBF /* SupplementaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBA985190B93E000C16FBF /* SupplementaryView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		2BDBA9701908DB3600C16FBF /* MainCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCollectionViewController.m; sourceTree = "<group>"; };
 		2BDBA9781908F00C00C16FBF /* CollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		2BDBA9791908F00C00C16FBF /* CollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		2BDBA984190B93E000C16FBF /* SupplementaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupplementaryView.h; sourceTree = "<group>"; };
+		2BDBA985190B93E000C16FBF /* SupplementaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupplementaryView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				2BDBA9701908DB3600C16FBF /* MainCollectionViewController.m */,
 				2BDBA9781908F00C00C16FBF /* CollectionViewFlowLayout.h */,
 				2BDBA9791908F00C00C16FBF /* CollectionViewFlowLayout.m */,
+				2BDBA984190B93E000C16FBF /* SupplementaryView.h */,
+				2BDBA985190B93E000C16FBF /* SupplementaryView.m */,
 			);
 			path = CollectionViewDemo;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				2BDBA9481908BBE300C16FBF /* AppDelegate.m in Sources */,
 				2BDBA9441908BBE300C16FBF /* main.m in Sources */,
 				2BDBA97A1908F00C00C16FBF /* CollectionViewFlowLayout.m in Sources */,
+				2BDBA986190B93E000C16FBF /* SupplementaryView.m in Sources */,
 				2BDBA9711908DB3600C16FBF /* MainCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +460,7 @@
 				2BDBA9621908BBE300C16FBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BDBA9631908BBE300C16FBF /* Build configuration list for PBXNativeTarget "CollectionViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +469,7 @@
 				2BDBA9651908BBE300C16FBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
