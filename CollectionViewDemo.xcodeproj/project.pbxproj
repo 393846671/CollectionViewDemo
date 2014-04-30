@@ -22,6 +22,7 @@
 		2BDBA9711908DB3600C16FBF /* MainCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBA9701908DB3600C16FBF /* MainCollectionViewController.m */; };
 		2BDBA97A1908F00C00C16FBF /* CollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBA9791908F00C00C16FBF /* CollectionViewFlowLayout.m */; };
 		2BDBA986190B93E000C16FBF /* SupplementaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBA985190B93E000C16FBF /* SupplementaryView.m */; };
+		2BEC65C81910E7F8009A88C7 /* DecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC65C71910E7F8009A88C7 /* DecorationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		2BDBA9791908F00C00C16FBF /* CollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		2BDBA984190B93E000C16FBF /* SupplementaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupplementaryView.h; sourceTree = "<group>"; };
 		2BDBA985190B93E000C16FBF /* SupplementaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupplementaryView.m; sourceTree = "<group>"; };
+		2BEC65C61910E7F8009A88C7 /* DecorationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationView.h; sourceTree = "<group>"; };
+		2BEC65C71910E7F8009A88C7 /* DecorationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecorationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				2BDBA9791908F00C00C16FBF /* CollectionViewFlowLayout.m */,
 				2BDBA984190B93E000C16FBF /* SupplementaryView.h */,
 				2BDBA985190B93E000C16FBF /* SupplementaryView.m */,
+				2BEC65C61910E7F8009A88C7 /* DecorationView.h */,
+				2BEC65C71910E7F8009A88C7 /* DecorationView.m */,
 			);
 			path = CollectionViewDemo;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BEC65C81910E7F8009A88C7 /* DecorationView.m in Sources */,
 				2BDBA9481908BBE300C16FBF /* AppDelegate.m in Sources */,
 				2BDBA9441908BBE300C16FBF /* main.m in Sources */,
 				2BDBA97A1908F00C00C16FBF /* CollectionViewFlowLayout.m in Sources */,
