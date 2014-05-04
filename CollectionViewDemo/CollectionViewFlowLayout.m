@@ -40,7 +40,7 @@
 
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect{
-    
+    NSLog(@"rect ,x%f,y%f,width%f,height%f",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
     [self registerClass:[DecorationView class] forDecorationViewOfKind:@"haha"];
     NSMutableArray * array = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
     NSMutableArray * temp = [NSMutableArray array];
@@ -51,30 +51,8 @@
     
     //把Decoration View的布局加入可见区域布局。
     
-//    for (int y=0; y<2; y++) {
-//        
-//        NSIndexPath* indexPath = [NSIndexPath indexPathForItem:3 inSection:y];
-//        
-//        [attributes addObject:[self layoutAttributesForDecorationViewOfKind:@"haha"atIndexPath:indexPath]];
-//        
-//    }
-//    
-//    
-//    for (NSInteger i=0 ; i < 2; i++) {
-//        
-//        for (NSInteger t=0; t<2; t++) {
-//            
-//            NSIndexPath* indexPath = [NSIndexPath indexPathForItem:t inSection:i];
-//            
-//            [attributes addObject:[self layoutAttributesForItemAtIndexPath:indexPath]];
-//            
-//        }
-//        
-//        
-//    }
-    
-    
     return array;
     
 }
+
 @end
