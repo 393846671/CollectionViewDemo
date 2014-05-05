@@ -28,6 +28,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+//    [((UICollectionView *)self.view) setCollectionViewLayout:<#(UICollectionViewLayout *)#> animated:YES completion:^(BOOL finished){
+//        
+//    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +51,7 @@
     });
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor orangeColor];
+    NSLog(@"%s",__FUNCTION__);
     return cell;
 }
 
@@ -64,6 +68,7 @@
     });
     
     UICollectionReusableView * supplementaryView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"SupplementaryView" forIndexPath:indexPath];
+    NSLog(@"%s",__FUNCTION__);
     return supplementaryView;
 }
 
@@ -101,5 +106,6 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
     return CGSizeMake(collectionView.frame.size.width, 140.0f);
 }
+
 
 @end
