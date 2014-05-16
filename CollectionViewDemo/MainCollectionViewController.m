@@ -50,8 +50,7 @@
         [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"CollectionCell"];
     });
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor orangeColor];
-    NSLog(@"%s",__FUNCTION__);
+    cell.backgroundColor = [UIColor colorWithRed:0.03f*[indexPath row] green:.04f*[indexPath row] blue:0.08f*[indexPath row] alpha:1.0f];
     return cell;
 }
 
@@ -89,6 +88,7 @@
     }
     return lineSpace;
 }
+
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     float itemSpace = 0.f;
     if (section == 0) {
@@ -100,9 +100,11 @@
     }
     return itemSpace;
 }
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     return CGSizeMake(collectionView.frame.size.width, 140.0f);
 }
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
     return CGSizeMake(collectionView.frame.size.width, 140.0f);
 }

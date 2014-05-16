@@ -23,7 +23,7 @@
 
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:(NSString*)decorationViewKind atIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%s",__FUNCTION__);
+//    NSLog(@"%s",__FUNCTION__);
     
     UICollectionViewLayoutAttributes* att = [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:decorationViewKind withIndexPath:indexPath];
     
@@ -40,7 +40,7 @@
 
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect{
-    NSLog(@"%s",__FUNCTION__);
+//    NSLog(@"%s",__FUNCTION__);
 //    NSLog(@"rect ,x%f,y%f,width%f,height%f",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
     [self registerClass:[DecorationView class] forDecorationViewOfKind:@"haha"];
     NSMutableArray * array = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
@@ -57,7 +57,7 @@
 }
 
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{
-    NSLog(@"%s",__FUNCTION__);
+//    NSLog(@"%s",__FUNCTION__);
     BOOL flag = [super shouldInvalidateLayoutForBoundsChange:newBounds];
     return flag;
 }
