@@ -13,7 +13,9 @@
 
 @end
 
-@implementation MainCollectionViewController
+@implementation MainCollectionViewController{
+    int itemCount;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,9 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-//    [((UICollectionView *)self.view) setCollectionViewLayout:<#(UICollectionViewLayout *)#> animated:YES completion:^(BOOL finished){
-//        
-//    }];
+    itemCount = 20;
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,7 +40,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 20;
+    return itemCount;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -67,7 +67,7 @@
     });
     
     UICollectionReusableView * supplementaryView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"SupplementaryView" forIndexPath:indexPath];
-    NSLog(@"%s",__FUNCTION__);
+//    NSLog(@"%s",__FUNCTION__);
     return supplementaryView;
 }
 
@@ -109,5 +109,75 @@
     return CGSizeMake(collectionView.frame.size.width, 140.0f);
 }
 
+#pragma mark- ------------------------UICollectionViewDelegate-------------------------------------
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%s",__FUNCTION__);
+    return YES;
+}
 
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%d hs highlight",[indexPath row]);
+    NSLog(@"%s",__FUNCTION__);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%s",__FUNCTION__);
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+// called when the user taps on an already-selected item in multi-select mode
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+//    NSString * msg = [NSString stringWithFormat:@"%d has been select",[indexPath row]];
+//    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"notice" message:msg delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil, nil];
+//    [alert show];
+    itemCount++;
+    [collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:[indexPath item] inSection:0]]];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+//    [super collectionView:collectionView didEndDisplayingCell:cell forItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
+    NSLog(@"%s",__FUNCTION__);
+}
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingSupplementaryView:(UICollectionReusableView *)view forElementOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+// These methods provide support for copy/paste actions on cells.
+// All three should be implemented if any are.
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender{
+    NSLog(@"%@",NSStringFromSelector(action));
+    return YES;
+}
+- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender{
+    
+}
+
+// support for custom transition layout
+//- (UICollectionViewTransitionLayout *)collectionView:(UICollectionView *)collectionView transitionLayoutForOldLayout:(UICollectionViewLayout *)fromLayout newLayout:(UICollectionViewLayout *)toLayout{
+//    
+//}
+
+- (void)moveItemAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath{
+    NSLog(@"123");
+}
+
+
+- (void)selectItemAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UICollectionViewScrollPosition)scrollPosition{
+    NSLog(@"%s",__FUNCTION__);
+}
 @end
