@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B2A4383192A665C00A50D17 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2A4382192A665C00A50D17 /* Crashlytics.framework */; };
 		2BDBA9381908BBE300C16FBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDBA9371908BBE300C16FBF /* Foundation.framework */; };
 		2BDBA93A1908BBE300C16FBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDBA9391908BBE300C16FBF /* CoreGraphics.framework */; };
 		2BDBA93C1908BBE300C16FBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDBA93B1908BBE300C16FBF /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B2A4382192A665C00A50D17 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2BDBA9341908BBE300C16FBF /* CollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BDBA9371908BBE300C16FBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2BDBA9391908BBE300C16FBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,6 +71,7 @@
 			files = (
 				2BDBA93A1908BBE300C16FBF /* CoreGraphics.framework in Frameworks */,
 				2BDBA93C1908BBE300C16FBF /* UIKit.framework in Frameworks */,
+				2B2A4383192A665C00A50D17 /* Crashlytics.framework in Frameworks */,
 				2BDBA9381908BBE300C16FBF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +111,7 @@
 		2BDBA9361908BBE300C16FBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B2A4382192A665C00A50D17 /* Crashlytics.framework */,
 				2BDBA9371908BBE300C16FBF /* Foundation.framework */,
 				2BDBA9391908BBE300C16FBF /* CoreGraphics.framework */,
 				2BDBA93B1908BBE300C16FBF /* UIKit.framework */,
@@ -174,6 +178,7 @@
 				2BDBA9301908BBE300C16FBF /* Sources */,
 				2BDBA9311908BBE300C16FBF /* Frameworks */,
 				2BDBA9321908BBE300C16FBF /* Resources */,
+				2B2A4381192A661700A50D17 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -256,6 +261,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B2A4381192A661700A50D17 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 5d2ba42acc34e1d88ab442bbb8c0f6692c0db723 7e466575fcdafe63cf5e43e18f156e9a4fea2a8d56506ec1b4d1e4f20b961f73";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2BDBA9301908BBE300C16FBF /* Sources */ = {
@@ -385,6 +406,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CollectionViewDemo/CollectionViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "CollectionViewDemo/CollectionViewDemo-Info.plist";
@@ -399,6 +424,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CollectionViewDemo/CollectionViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "CollectionViewDemo/CollectionViewDemo-Info.plist";

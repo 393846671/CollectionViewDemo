@@ -8,6 +8,7 @@
 
 #import "MainCollectionViewController.h"
 #import "SupplementaryView.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface MainCollectionViewController ()
 
@@ -40,7 +41,10 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return itemCount;
+    if (section == 0) {
+        return itemCount;
+    }
+    return 20;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -116,7 +120,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%d hs highlight",[indexPath row]);
+//    NSLog(@"%d hs highlight",[indexPath row]);
     NSLog(@"%s",__FUNCTION__);
 }
 
@@ -134,11 +138,9 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//    NSString * msg = [NSString stringWithFormat:@"%d has been select",[indexPath row]];
-//    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"notice" message:msg delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil, nil];
-//    [alert show];
     itemCount++;
     [collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:[indexPath item] inSection:0]]];
+    [[Crashlytics sharedInstance] crash];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{

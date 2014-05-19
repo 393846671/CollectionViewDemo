@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainCollectionViewController.h"
 #import "CollectionViewFlowLayout.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -16,6 +17,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    [Crashlytics startWithAPIKey:@"5d2ba42acc34e1d88ab442bbb8c0f6692c0db723"];
     MainCollectionViewController * rootVC = [[MainCollectionViewController alloc]initWithCollectionViewLayout:[[CollectionViewFlowLayout alloc]init]];
     self.window.rootViewController = rootVC;
     self.window.backgroundColor = [UIColor whiteColor];
