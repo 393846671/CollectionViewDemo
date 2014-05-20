@@ -76,6 +76,9 @@
     return supplementaryView;
 }
 
+
+
+#pragma mark- ------------------------ UICollectionViewDelegateFlowLayout ------------------------
 //-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
 //    float width = indexPath.row*50.0f > collectionView.frame.size.width ? collectionView.frame.size.width : indexPath.row*50.0f;
 //    float height = indexPath.row * 50.0f > collectionView.frame.size.width ? collectionView.frame.size.width : indexPath.row * 50.0f;
@@ -152,10 +155,8 @@
     
 //    [collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
     
-    NSIndexPath * indexPathNew = [NSIndexPath indexPathForRow:5 inSection:0];
-    
-    
-    [collectionView moveItemAtIndexPath:indexPath toIndexPath:indexPathNew];
+//    NSIndexPath * indexPathNew = [NSIndexPath indexPathForRow:5 inSection:0];
+//    [collectionView moveItemAtIndexPath:indexPath toIndexPath:indexPathNew];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{

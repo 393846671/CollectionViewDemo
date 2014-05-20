@@ -46,6 +46,8 @@
     NSMutableArray * array = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
     NSMutableArray * temp = [NSMutableArray array];
     for (UICollectionViewLayoutAttributes * atts in array) {
+        int x = (int)[atts.indexPath row];
+        atts.frame = CGRectMake(x%3 * 120.0f, x*40.0f, 100.0f, x*40.0f);
         [temp addObject:[self layoutAttributesForDecorationViewOfKind:@"haha"atIndexPath:atts.indexPath]];
     }
     [array addObjectsFromArray:temp];
