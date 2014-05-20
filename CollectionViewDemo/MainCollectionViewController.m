@@ -9,6 +9,7 @@
 #import "MainCollectionViewController.h"
 #import "SupplementaryView.h"
 #import <Crashlytics/Crashlytics.h>
+#import "CollectionViewFlowLayoutNew.h"
 
 @interface MainCollectionViewController ()
 
@@ -138,9 +139,23 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    itemCount++;
-    [collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:[indexPath item] inSection:0]]];
-    [[Crashlytics sharedInstance] crash];
+//    itemCount++;
+//    [collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:[indexPath item] inSection:0]]];
+    
+    
+//    __block UICollectionView * temp = collectionView;
+//    [UIView animateWithDuration:3.0f animations:^{
+//        [collectionView setCollectionViewLayout:[[CollectionViewFlowLayoutNew alloc] init] animated:YES completion:^(BOOL finished){
+//            temp.backgroundColor = [UIColor whiteColor];
+//        }];
+//    }];
+    
+//    [collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
+    
+    NSIndexPath * indexPathNew = [NSIndexPath indexPathForRow:5 inSection:0];
+    
+    
+    [collectionView moveItemAtIndexPath:indexPath toIndexPath:indexPathNew];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -166,7 +181,7 @@
     return YES;
 }
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender{
-    
+    NSLog(@"%@",sender);
 }
 
 // support for custom transition layout
@@ -178,8 +193,4 @@
     NSLog(@"123");
 }
 
-
-- (void)selectItemAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UICollectionViewScrollPosition)scrollPosition{
-    NSLog(@"%s",__FUNCTION__);
-}
 @end

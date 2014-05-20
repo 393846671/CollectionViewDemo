@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B2A4383192A665C00A50D17 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2A4382192A665C00A50D17 /* Crashlytics.framework */; };
+		2BA15807192B46FF003A4A25 /* CollectionViewFlowLayoutNew.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA15806192B46FF003A4A25 /* CollectionViewFlowLayoutNew.m */; };
 		2BDBA9381908BBE300C16FBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDBA9371908BBE300C16FBF /* Foundation.framework */; };
 		2BDBA93A1908BBE300C16FBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDBA9391908BBE300C16FBF /* CoreGraphics.framework */; };
 		2BDBA93C1908BBE300C16FBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDBA93B1908BBE300C16FBF /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		2B2A4382192A665C00A50D17 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		2BA15805192B46FF003A4A25 /* CollectionViewFlowLayoutNew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewFlowLayoutNew.h; sourceTree = "<group>"; };
+		2BA15806192B46FF003A4A25 /* CollectionViewFlowLayoutNew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewFlowLayoutNew.m; sourceTree = "<group>"; };
 		2BDBA9341908BBE300C16FBF /* CollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BDBA9371908BBE300C16FBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2BDBA9391908BBE300C16FBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,8 @@
 				2BDBA985190B93E000C16FBF /* SupplementaryView.m */,
 				2BEC65C61910E7F8009A88C7 /* DecorationView.h */,
 				2BEC65C71910E7F8009A88C7 /* DecorationView.m */,
+				2BA15805192B46FF003A4A25 /* CollectionViewFlowLayoutNew.h */,
+				2BA15806192B46FF003A4A25 /* CollectionViewFlowLayoutNew.m */,
 			);
 			path = CollectionViewDemo;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BEC65C81910E7F8009A88C7 /* DecorationView.m in Sources */,
+				2BA15807192B46FF003A4A25 /* CollectionViewFlowLayoutNew.m in Sources */,
 				2BDBA9481908BBE300C16FBF /* AppDelegate.m in Sources */,
 				2BDBA9441908BBE300C16FBF /* main.m in Sources */,
 				2BDBA97A1908F00C00C16FBF /* CollectionViewFlowLayout.m in Sources */,
