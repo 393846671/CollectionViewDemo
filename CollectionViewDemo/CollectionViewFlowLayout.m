@@ -64,4 +64,12 @@
     return flag;
 }
 
+- (void)prepareForCollectionViewUpdates:(NSArray *)updateItems{
+    NSLog(@"prepareViewUpdates");
+}
+
+- (void)finalizeCollectionViewUpdates{      // called inside an animation block after the update
+
+}
+
 @end
