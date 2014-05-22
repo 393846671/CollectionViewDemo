@@ -145,13 +145,12 @@
 //    itemCount++;
 //    [collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:[indexPath item] inSection:0]]];
     
-    
-//    __block UICollectionView * temp = collectionView;
-//    [UIView animateWithDuration:3.0f animations:^{
-//        [collectionView setCollectionViewLayout:[[CollectionViewFlowLayoutNew alloc] init] animated:YES completion:^(BOOL finished){
-//            temp.backgroundColor = [UIColor whiteColor];
-//        }];
-//    }];
+    __block UICollectionView * temp = collectionView;
+    [UIView animateWithDuration:0.5f animations:^{
+        [collectionView setCollectionViewLayout:[[CollectionViewFlowLayoutNew alloc] init] animated:YES completion:^(BOOL finished){
+            temp.backgroundColor = [UIColor whiteColor];
+        }];
+    }];
     
 //    [collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
     
