@@ -65,15 +65,28 @@
 }
 
 - (void)prepareForCollectionViewUpdates:(NSArray *)updateItems{
-    [super prepareForCollectionViewUpdates:updateItems];
+//    [super prepareForCollectionViewUpdates:updateItems];
     NSLog(@"prepareViewUpdates");
 }
 
+-(void)prepareLayout{
+    [super prepareLayout];
+}
 
 - (void)prepareForTransitionToLayout:(UICollectionViewLayout*)newLayout{
     newLayout = nil;
     NSLog(@"%s",__FUNCTION__);
 }
-//- (void)prepareForTransitionFromLayout:(UICollectionViewLayout*)oldLayout NS_AVAILABLE_IOS(7_0);
-//- (void)finalizeLayoutTransition NS_AVAILABLE_IOS(7_0);  // called inside an animation block after the transition
+- (void)prepareForAnimatedBoundsChange:(CGRect)oldBounds{
+    NSLog(@"%s",__FUNCTION__);
+}
+- (void)finalizeAnimatedBoundsChange{
+}
+- (void)finalizeCollectionViewUpdates{
+
+}
+- (void)prepareForTransitionFromLayout:(UICollectionViewLayout*)oldLayout{
+    
+}
+- (void)finalizeLayoutTransition {}
 @end

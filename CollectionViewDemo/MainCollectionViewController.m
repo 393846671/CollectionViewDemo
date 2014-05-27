@@ -142,15 +142,15 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//    itemCount++;
-//    [collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:[indexPath item] inSection:0]]];
+    itemCount++;
+    [collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:[indexPath item] inSection:0]]];
     
-    __block UICollectionView * temp = collectionView;
-    [UIView animateWithDuration:0.5f animations:^{
-        [collectionView setCollectionViewLayout:[[CollectionViewFlowLayoutNew alloc] init] animated:YES completion:^(BOOL finished){
-            temp.backgroundColor = [UIColor whiteColor];
-        }];
-    }];
+//    __block UICollectionView * temp = collectionView;
+//    [UIView animateWithDuration:0.5f animations:^{
+//        [collectionView setCollectionViewLayout:[[CollectionViewFlowLayoutNew alloc] init] animated:YES completion:^(BOOL finished){
+//            temp.backgroundColor = [UIColor whiteColor];
+//        }];
+//    }];
     
 //    [collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
     
@@ -163,7 +163,6 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
-//    [super collectionView:collectionView didEndDisplayingCell:cell forItemAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
     NSLog(@"%s",__FUNCTION__);
 }
