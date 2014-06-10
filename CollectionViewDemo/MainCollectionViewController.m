@@ -33,6 +33,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     itemCount = 20;
+    UILongPressGestureRecognizer * longPressGesture = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(chooseCell:)];
+    [self.view addGestureRecognizer:longPressGesture];
 }
 
 - (void)didReceiveMemoryWarning
@@ -173,7 +175,7 @@
 // These methods provide support for copy/paste actions on cells.
 // All three should be implemented if any are.
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return YES;
+    return NO;
 }
 - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender{
     NSLog(@"%@",NSStringFromSelector(action));
@@ -192,4 +194,57 @@
     NSLog(@"123");
 }
 
+
+-(void)chooseCell:(id)sender{
+    UILongPressGestureRecognizer * longPress = (UILongPressGestureRecognizer *)sender;
+    UICollectionView * view = (UICollectionView *)self.collectionView;
+    CGPoint location = [longPress locationInView:view];
+    NSIndexPath * index = [view indexPathForItemAtPoint:location];
+    
+    static UIView * snapShot = nil;
+    static NSIndexPath * sourceIndexPath = nil;
+    UIGestureRecognizerState state = longPress.state;
+    switch (state) {
+        case UIGestureRecognizerStateBegan:{
+            UICollectionViewCell * cell = [view cellForItemAtIndexPath:index];
+            snapShot = [cell snapshotViewAfterScreenUpdates:YES];
+            snapShot.center = cell.center;
+            [self.collectionView addSubview:snapShot];
+            [UIView animateWithDuration:0.2f animations:^{
+                cell.alpha = 0.0f;
+                snapShot.transform = CGAffineTransformMakeScale(1.2f, 1.2f);
+            }];
+            sourceIndexPath = index;
+        }break;
+        case UIGestureRecognizerStateChanged:
+            if (snapShot.center.x != location.x || snapShot.center.y != location.y) {
+                [UIView animateWithDuration:1.2f animations:^{
+                    snapShot.center = location;
+                }];
+            }
+            if (index != nil && index.row != sourceIndexPath.row) {
+                [self.collectionView moveItemAtIndexPath:sourceIndexPath toIndexPath:index];
+                UICollectionViewCell * cell = [view cellForItemAtIndexPath:index];
+                cell.alpha = 0.0f;
+                sourceIndexPath = index;
+            }
+            break;
+        case UIGestureRecognizerStateEnded:{
+            if (index == nil) {
+                index = sourceIndexPath;
+            }
+            __block UICollectionViewCell * cell = [view cellForItemAtIndexPath:index];
+            [UIView animateWithDuration:0.5f animations:^{
+                snapShot.frame = cell.frame;
+//                snapShot.center = cell.center;
+            }completion:^(BOOL finished){
+                [snapShot removeFromSuperview];
+                cell.alpha = 1.0f;
+            }];
+        }break;
+        default:
+            NSLog(@"i don't know the gesture");
+            break;
+    }
+}
 @end
