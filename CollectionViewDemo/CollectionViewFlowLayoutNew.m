@@ -16,6 +16,7 @@
         self.scrollDirection = UICollectionViewScrollDirectionVertical;
         self.sectionInset = UIEdgeInsetsMake(0.0f, 0.0, 0.0f, 0.0);   //it's up left down right
         self.minimumLineSpacing = 50.0;
+        self.enumDemo = MLOptionsEnumDemoNone;
     }
     return self;
 }
